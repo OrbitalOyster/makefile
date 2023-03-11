@@ -14,6 +14,8 @@ LDLIBS :=
 # All .c files
 C_FILES := $(wildcard *.c)
 
+# TODO: Header dependencies
+
 # All .o files
 OBJS := $(C_FILES:.c=.o)
 
