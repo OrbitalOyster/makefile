@@ -4,12 +4,12 @@ OUTPUT := main
 WARNINGS := -Wall -Wextra -Wshadow -Wconversion -Werror
 STANDART := -std=c11
 OPTIMIZATION := -O2
-DEBUG := 
+DEBUG :=
 
 # Implicit variables
 CC := gcc
 CFLAGS := $(WARNINGS) $(STANDART) $(OPTIMIZATION) $(DEBUG)
-LDLIBS := 
+LDLIBS :=
 
 # All .c files
 C_FILES := $(wildcard *.c)
