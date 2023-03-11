@@ -15,7 +15,7 @@ LDLIBS :=
 C_FILES := $(wildcard *.c)
 
 # All .o files
-OBJS := $(patsubst %.c, %.o, $(C_FILES))
+OBJS := $(C_FILES:.c=.o)
 
 # Final result
 all: $(OUTPUT)
