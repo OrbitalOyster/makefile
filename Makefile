@@ -30,6 +30,6 @@ $(OUTPUT): $(OBJS)
 # Clear working directory
 clean:
 	-rm *.o
-	-rm main
+	-rm $(OUTPUT)
 
 .PHONY: clean
