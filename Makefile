@@ -20,6 +20,7 @@ C_FILES := $(wildcard *.c) $(wildcard **/*.c)
 OBJS := $(C_FILES:.c=.o)
 
 # Final result
+all: $(OUTPUT)
 $(OUTPUT): $(OBJS)
 	$(CC) $(OBJS) $(LDLIBS) -o $(OUTPUT)
 
