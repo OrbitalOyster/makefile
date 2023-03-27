@@ -10,9 +10,10 @@ DEBUG :=
 CC := gcc
 CFLAGS := $(WARNINGS) $(STANDART) $(OPTIMIZATION) $(DEBUG)
 LDLIBS :=
+LDFLAGS :=
 
 # All .c files
-C_FILES := $(wildcard *.c)
+C_FILES := $(wildcard *.c) $(wildcard **/*.c)
 
 # TODO: Header dependencies
 
@@ -30,6 +31,7 @@ $(OUTPUT): $(OBJS)
 # Clear working directory
 clean:
 	-rm *.o
+	-rm **/*.o
 	-rm $(OUTPUT)
 
-.PHONY: clean
+.PHONY: all clean
