@@ -1,7 +1,7 @@
 # Generic Makefile
 
-OUTPUT := main
-WARNINGS := -Wall -Wextra -Wshadow -Wconversion -Werror
+OUTPUT := cproject
+WARNINGS := -Wall -Wextra -Wshadow -Wconversion -Warith-conversion -Wfloat-equal -Werror
 STANDART := -std=c11
 OPTIMIZATION := -O2
 DEBUG :=
@@ -10,7 +10,6 @@ DEBUG :=
 CC := gcc
 CFLAGS := $(WARNINGS) $(STANDART) $(OPTIMIZATION) $(DEBUG)
 LDLIBS :=
-LDFLAGS :=
 
 # All .c files
 C_FILES := $(wildcard *.c) $(wildcard **/*.c)
@@ -21,8 +20,8 @@ C_FILES := $(wildcard *.c) $(wildcard **/*.c)
 OBJS := $(C_FILES:.c=.o)
 
 # Final result
-all: $(OUTPUT)
 $(OUTPUT): $(OBJS)
+	$(CC) $(OBJS) $(LDLIBS) -o $(OUTPUT)
 
 # Compile all .c files
 %.o: %.c
